@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>rpc-framework-common</module>
+        <module>rpc-framework-simple</module>
     </modules>
 
     <properties>
