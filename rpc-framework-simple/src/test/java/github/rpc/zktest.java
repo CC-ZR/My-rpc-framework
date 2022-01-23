@@ -1,8 +1,11 @@
 package github.rpc;
 
+import github.rpc.registry.ServiceDiscovery;
 import github.rpc.registry.ServiceRegistry;
+import github.rpc.registry.zk.ZkServiceDiscoveryImpl;
 import github.rpc.registry.zk.ZkServiceRegistryImpl;
 import github.rpc.registry.zk.util.CuratorUtils;
+import github.rpc.remoting.dto.RpcRequest;
 import org.apache.curator.framework.CuratorFramework;
 import org.junit.Test;
 
@@ -26,5 +29,14 @@ public class zktest {
 //        if(zkClient != null){
 //            zkClient.close();
 //        }
+    }
+
+    @Test
+    public void testServiceDiscovery(){
+        RpcRequest rpcRequest = new RpcRequest();
+        rpcRequest.testMethodName();
+        ServiceDiscovery serviceDiscovery = new ZkServiceDiscoveryImpl();
+        InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest);
+        System.out.println(inetSocketAddress.toString());
     }
 }

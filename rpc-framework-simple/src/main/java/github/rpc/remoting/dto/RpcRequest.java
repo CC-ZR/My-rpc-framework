@@ -28,4 +28,10 @@ public class RpcRequest {
     public String getRpcServiceName() {
         return this.getInterfaceName() + this.getGroup() + this.getVersion();
     }
+
+    public void testMethodName(){
+        this.interfaceName = "app1";
+        this.group = "";
+        this.version = "";
+    }
 }
