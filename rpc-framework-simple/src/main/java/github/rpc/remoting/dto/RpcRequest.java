@@ -2,6 +2,8 @@ package github.rpc.remoting.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  * rpc请求的类定义
  * 每个rpc请求都需要按照这个结构进行组装
@@ -11,7 +13,7 @@ import lombok.*;
 @Getter
 @Builder
 @ToString
-public class RpcRequest {
+public class RpcRequest implements Serializable {
     private static final long serialVersionUID = 1905122041950251207L;
     private String requestId;
     private String interfaceName;

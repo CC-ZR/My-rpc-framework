@@ -13,7 +13,7 @@ import lombok.*;
 @Setter
 @Builder
 @ToString
-public class RpcMassage {
+public class RpcMessage {
     //rpc message type
     private byte messageType;
     //serialization type
