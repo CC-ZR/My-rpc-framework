@@ -39,7 +39,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 此处定义编码器
  */
 @Slf4j
-public class RpcMassegeEncoder extends MessageToByteEncoder<RpcMessage> {
+public class RpcMessageEncoder extends MessageToByteEncoder<RpcMessage> {
     // 原子运算整数，保证一些操作，如自增的操作的原子性，用于处理多线程的情况
     public static final AtomicInteger ATOMIC_INTEGER = new AtomicInteger(0);
 
